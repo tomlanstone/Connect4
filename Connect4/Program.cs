@@ -8,12 +8,15 @@ namespace Connect4
         private static readonly string EOL = Environment.NewLine;
 
         private static readonly ConsoleService consoleService = new ConsoleService();
-
-        //private static readonly string[] boardTemplate = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+ 
+        //private static readonly string[] boardTemplate = {"1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
         //private static readonly string[] board = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
-        private static int boardLength = 1;
+        private static readonly string[] boardX = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "V", "X", "Y", "Z" };
+
+        private static readonly string[] boardY = { "1", "2", "3", "4", "5", "6" };
+        private static int boardLength = 7;
 
         private static int boardHeight = 6;
 
