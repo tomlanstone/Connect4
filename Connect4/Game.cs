@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
 
 namespace Connect4
@@ -30,6 +31,10 @@ namespace Connect4
 
         }
 
+        public int GetCell(int row, int column)
+        {
+            return board[column][row];
+        }
 
     }
 

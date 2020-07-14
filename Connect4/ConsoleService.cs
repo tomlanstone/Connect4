@@ -105,8 +105,21 @@ namespace Connect4
         {
             for (int i = 0; i < game.boardLength; i++)
             {
+                char cellState = ' ';
+                ConsoleColor consoleColor = ConsoleColor.White;
+                if (game.GetCell(rowNumber, i ) == 1)
+                {
+                    cellState = 'O';
+                    consoleColor = ConsoleColor.Yellow;
+                }                
+                
+                if (game.GetCell(rowNumber, i ) == 2)
+                {
+                    cellState = 'O';
+                    consoleColor = ConsoleColor.Red;
+                }
                 Print("ǀ");
-                Print("   ");
+                Print(" " + cellState +" ", consoleColor);
             }
             PrintLine("ǀ");
         }
