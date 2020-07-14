@@ -10,6 +10,12 @@ namespace Connect4
         private static readonly string EOL = Environment.NewLine;
         private readonly string[] yesValues = new string[] { "y", "yes", "true", "1" };
 
+        public ConsoleService()
+        {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+
+        }
+
         public void PrintLine(string line = "", ConsoleColor? foregroundColor = null, ConsoleColor? backgroundColor = null)
         {
             Print(line, foregroundColor, backgroundColor);
@@ -80,5 +86,39 @@ namespace Connect4
 
             Print(value, ConsoleColor.Red);
         }
+
+        public void PrintGame(Game game)
+        {
+            for (int i = 0; i < game.boardHeight; i++)
+            {
+                PrintRowDivider(game);
+                PrintRow(game, i);
+            }
+            PrintRowDivider(game);
+            for (int i = 0; i < game.boardLength; i++)
+            {
+                Print("  " + (char)(65+i) + " ");
+            }
+        }
+
+        private void PrintRow(Game game, int rowNumber)
+        {
+            for (int i = 0; i < game.boardLength; i++)
+            {
+                Print("ǀ");
+                Print("   ");
+            }
+            PrintLine("ǀ");
+        }
+
+        private void PrintRowDivider(Game game)
+        {
+            for (int i = 0; i < 4 * game.boardLength + 1; i++)
+            {
+                Print("-");
+            }
+            PrintLine();
+        }
     }
+
 }

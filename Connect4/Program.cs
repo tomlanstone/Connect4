@@ -9,17 +9,6 @@ namespace Connect4
 
         private static readonly ConsoleService consoleService = new ConsoleService();
  
-        //private static readonly string[] boardTemplate = {"1", "2", "3", "4", "5", "6", "7", "8", "9" };
-
-        //private static readonly string[] board = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-
-        private static readonly string[] boardX = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "V", "X", "Y", "Z" };
-
-        private static readonly string[] boardY = { "1", "2", "3", "4", "5", "6" };
-        private static int boardLength = 7;
-
-        private static int boardHeight = 6;
-
         private static readonly string[] yesOptions = { "y", "yes" };
 
         private static readonly string[] noOptions = { "n", "no" };
@@ -45,10 +34,13 @@ namespace Connect4
         private static int player2Score = 0;
 
         private static int stalemateCount = 0;
-    {
+    
         static void Main()
         {
-            Console.WriteLine("Hello World!");
+            Game game = new Game();
+
+            consoleService.PrintGame(game);
+            Console.ReadKey();
         }
     }
 }
