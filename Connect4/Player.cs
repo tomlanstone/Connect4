@@ -17,7 +17,7 @@ namespace Connect4
         {
             this.player_num = player_num; 
             this.colour = colour;
-            this.name = Interactor.NotNullInput("Enter player name:");
+            this.name = Interactor.NotEmptyInput("Enter player name:");
         }
     public int PlayerNum { get { return player_num; } }
     public string Colour {  get { return colour; } }
